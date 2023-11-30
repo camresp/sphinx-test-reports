@@ -8,7 +8,7 @@ requires = ["sphinx>=4.0", "lxml", "sphinx-needs>=1.0.1"]
 
 with open(os.path.join(os.path.dirname(__file__), "README.rst")) as file:
     setup(
-        name="sphinx-test-reports",
+        name="sphinx-test-reports-tidalsense",
         # Update also test_reports.py, conf.py and changelog!
         version="1.0.2",
         url="http://github.com/useblocks/sphinx-test-reports",
@@ -17,7 +17,7 @@ with open(os.path.join(os.path.dirname(__file__), "README.rst")) as file:
         author="team useblocks",
         author_email="info@useblocks.com",
         description="Sphinx extension for showing test results and test environment "
-        "information inside sphinx documentations",
+        "information inside sphinx documentations, as adapted by TidalSense Ltd.",
         long_description=file.read(),
         zip_safe=False,
         classifiers=[
