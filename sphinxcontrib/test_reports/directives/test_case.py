@@ -186,7 +186,7 @@ class TestCaseDirective(TestCommonDirective):
             result=result,
             time=time,
             style=style,
-            properties=properties
+            properties=properties,
         )
 
         add_doc(self.env, docname)

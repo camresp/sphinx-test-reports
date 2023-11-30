@@ -71,7 +71,9 @@ def setup(app):
     app.add_config_value("tr_suite_id_length", 3, "html")
     app.add_config_value("tr_case_id_length", 5, "html")
     app.add_config_value("tr_import_encoding", "utf8", "html")
-    app.add_config_value("tr_ingestion_hook", None, "html", types=[types.FunctionType, callable, None])
+    app.add_config_value(
+        "tr_ingestion_hook", None, "html", types=[types.FunctionType, callable, None]
+    )
 
     json_mapping = {
         "json_config": {

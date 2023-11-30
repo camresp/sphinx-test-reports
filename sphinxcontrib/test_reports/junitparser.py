@@ -54,12 +54,12 @@ class JUnitParser:
                 "name": testcase.attrib.get("name", "unknown"),
                 "time": float(testcase.attrib.get("time", -1)),
             }
-        
-            if testcase.find('properties'):
+
+            if testcase.find("properties"):
                 props = {}
                 for p in testcase.properties.iter("property"):
                     try:
-                        props[p.attrib['name']] = p.attrib['value']
+                        props[p.attrib["name"]] = p.attrib["value"]
                     except AttributeError:
                         pass
                 tc_dict["properties"] = props

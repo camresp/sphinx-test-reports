@@ -199,7 +199,9 @@ class TestSuiteDirective(TestCommonDirective):
                     needs = SphinxNeedsData(self.app.env)
                     for m in new_needs:
                         need_id = m["ids"][0]
-                        self.app.config.tr_ingestion_hook(needs.get_or_create_needs()[need_id])
+                        self.app.config.tr_ingestion_hook(
+                            needs.get_or_create_needs()[need_id]
+                        )
                 main_section += new_needs
 
                 if is_nested:

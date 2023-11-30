@@ -3,7 +3,6 @@ from pathlib import Path
 import pytest
 
 
-
 @pytest.mark.parametrize(
     "test_app",
     [{"buildername": "html", "srcdir": "doc_test/pytest_with_properties"}],
