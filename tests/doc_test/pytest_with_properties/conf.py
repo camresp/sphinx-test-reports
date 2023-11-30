@@ -38,7 +38,7 @@ def add_ntd_links_from_properties(need):
     """Called for each `testcase` need after it is created, to update the links with the testcase parent properties.
 
     This encapsulates the product-specific logic for how we are using the pytest properties: notably
-    `tests_requirement_ref` for the requirement numbers, and a filter for the product requirements file we are 
+    `tests_requirement_ref` for the requirement numbers, and a filter for the product requirements file we are
     interested in.  Tests can trace to more than one product.
     """
     if isinstance(need, dict) and need["type"] == "testcase":
