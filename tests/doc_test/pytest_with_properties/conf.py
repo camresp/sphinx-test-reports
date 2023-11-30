@@ -17,11 +17,7 @@
 #
 from ast import literal_eval
 import os
-from pprint import pprint
 import sys
-
-from sphinxcontrib.test_reports.directives.test_case import TestCase
-from sphinx_needs.needs import Need
 
 sys.path.insert(0, os.path.abspath("../../sphinxcontrib"))
 
@@ -42,8 +38,8 @@ def add_ntd_links_from_properties(need):
     """Called for each `testcase` need after it is created, to update the links with the testcase parent properties.
 
     This encapsulates the product-specific logic for how we are using the pytest properties: notably
-    `tests_requirement_ref` for the requirement numbers, and a filter for the product requirements file we are interested in.
-    Tests can trace to more than one product.
+    `tests_requirement_ref` for the requirement numbers, and a filter for the product requirements file we are 
+    interested in.  Tests can trace to more than one product.
     """
     if isinstance(need, dict) and need["type"] == "testcase":
         # print("INGESTION", need["id"], need['properties'])

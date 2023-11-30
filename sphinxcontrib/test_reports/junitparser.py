@@ -2,6 +2,7 @@
 JUnit XML parser
 """
 
+from contextlib import suppress
 import os
 
 from lxml import etree, objectify
@@ -58,10 +59,8 @@ class JUnitParser:
             if testcase.find("properties"):
                 props = {}
                 for p in testcase.properties.iter("property"):
-                    try:
+                    with suppress(AttributeError):
                         props[p.attrib["name"]] = p.attrib["value"]
-                    except AttributeError:
-                        pass
                 tc_dict["properties"] = props
 
             # The following data is normally a subnode (e.g. skipped/failure).
