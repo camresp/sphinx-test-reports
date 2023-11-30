@@ -38,9 +38,16 @@ sys.path.insert(0, os.path.abspath("../../sphinxcontrib"))
 extensions = ["sphinx_needs", "sphinxcontrib.test_reports"]
 
 def add_ntd_links_from_properties(need):
+    """Called for each `testcase` need after it is created, to update the links with the testcase parent properties.
+    
+    This encapsulates the product-specific logic for how we are using the pytest properties: notably
+    `tests_requirement_ref` for the requirement numbers, and a filter for the product requirements file we are interested in.
+    Tests can trace to more than one product.
+    """
     if isinstance(need, dict) and need["type"] == "testcase":
         #print("INGESTION", need["id"], need['properties'])
         try:
+            # Sphinx reprs a dict containing a string into a string, so we need to eval twice to extract.
             props = literal_eval(need["properties"])
             new_links = literal_eval(props["tests_requirement_ref"])
             links_filtered = [k for k in new_links if k.startswith('NTD')]
