@@ -1,5 +1,6 @@
 # fmt: off
 import os
+import types
 
 import sphinx
 # from docutils import nodes
@@ -30,7 +31,7 @@ else:
 
 # fmt: on
 
-VERSION = "1.0.2"
+VERSION = "1.0.2-TidalSense"
 
 
 def setup(app):
@@ -70,6 +71,9 @@ def setup(app):
     app.add_config_value("tr_suite_id_length", 3, "html")
     app.add_config_value("tr_case_id_length", 5, "html")
     app.add_config_value("tr_import_encoding", "utf8", "html")
+    app.add_config_value(
+        "tr_ingestion_hook", None, "html", types=[types.FunctionType, callable, None]
+    )
 
     json_mapping = {
         "json_config": {
@@ -158,6 +162,7 @@ def sphinx_needs_update(app, *args):
     add_extra_option(app, "case_parameter")
     add_extra_option(app, "classname")
     add_extra_option(app, "time")
+    add_extra_option(app, "properties")
 
     add_extra_option(app, "suites")
     add_extra_option(app, "cases")

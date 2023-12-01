@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<testsuites>
+  <testsuite name="camrest" errors="0" failures="0" skipped="5" tests="5" time="115.486" timestamp="2023-11-28T13:15:59.848379" hostname="fv-az403-667">
+    <testcase classname="analyser.tests.integration.views.test_decode_cap.TestDecodeCapCallsPusherForLifecycleEvents" name="test_started_when_valid_upload" file="analyser/tests/integration/views/test_decode_cap.py" line="58" time="13.411">
+      <properties>
+        <property name="description" value="Critical"/>
+        <property name="tests_requirement_ref" value="{'NTD-SR-030', 'NTD-SR-098', 'NTS-SR-30'}"/>
+      </properties>
+    </testcase>
+    <testcase classname="analyser.tests.integration.views.test_decode_cap.TestDecodeCapCallsPusherForLifecycleEvents" name="test_succeeded_when_successful_decode" file="analyser/tests/integration/views/test_decode_cap.py" line="74" time="0.015">
+      <properties>
+        <property name="description" value="No description"/>
+        <property name="tests_requirement_ref" value="{'NTD-SR-030', 'NTD-SR-098', 'NTS-SR-30'}"/>
+      </properties>
+    </testcase>
+    <testcase classname="analyser.tests.integration.views.test_decode_cap.TestDecodeCapCallsPusherForLifecycleEvents" name="test_failed_when_exception_thrown" file="analyser/tests/integration/views/test_decode_cap.py" line="101" time="0.013">
+      <properties>
+        <property name="description" value="No description"/>
+        <property name="tests_requirement_ref" value="{'NTD-SR-030', 'NTD-SR-098', 'NTS-SR-30'}"/>
+      </properties>
+    </testcase>
+    <testcase classname="analyser.tests.integration.views.test_decode_cap.TestDecodeCapCallsPusherForLifecycleEvents" name="test_failed_when_value_error_thrown" file="analyser/tests/integration/views/test_decode_cap.py" line="117" time="0.025">
+      <properties>
+        <property name="description" value="No description"/>
+        <property name="tests_requirement_ref" value="{'NTD-SR-030', 'NTD-SR-098', 'NTS-SR-30'}"/>
+      </properties>
+    </testcase>
+    <testcase classname="analyser.tests.integration.views.test_decode_cap.TestIngestionCreatesCapnogramWithCorrectProduct" name="test_handset_version[ntx]" file="analyser/tests/integration/views/test_decode_cap.py" line="142" time="0.099">
+      <properties>
+        <property name="description" value="No description"/>
+        <property name="tests_requirement_ref" value="{'NTS-SR-33', 'NTD-SR-032', 'NTS-SR-32'}"/>
+      </properties>
+    </testcase>
+  </testsuite>
+</testsuites>

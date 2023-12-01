@@ -146,6 +146,7 @@ class TestCaseDirective(TestCommonDirective):
             )
 
         time = case["time"]
+        properties = case.get("properties", {})
         style = "tr_" + case["result"]
 
         import re
@@ -185,6 +186,7 @@ class TestCaseDirective(TestCommonDirective):
             result=result,
             time=time,
             style=style,
+            properties=properties,
         )
 
         add_doc(self.env, docname)

@@ -8,6 +8,7 @@ from sphinx_needs.utils import add_doc
 import sphinxcontrib.test_reports.directives.test_case
 from sphinxcontrib.test_reports.directives.test_common import TestCommonDirective
 from sphinxcontrib.test_reports.exceptions import TestReportInvalidOption
+from sphinx_needs.data import SphinxNeedsData
 
 
 class TestSuite(nodes.General, nodes.Element):
@@ -193,7 +194,15 @@ class TestSuiteDirective(TestCommonDirective):
 
                 # depending if nested or not, runs case directive to add content to testcases
                 # count is for correct suite access, if multiple present, case_count is for correct case access
-                main_section += case_directive.run(is_nested, count, case_count)
+                new_needs = case_directive.run(is_nested, count, case_count)
+                if self.app.config.tr_ingestion_hook:
+                    needs = SphinxNeedsData(self.app.env)
+                    for m in new_needs:
+                        need_id = m["ids"][0]
+                        self.app.config.tr_ingestion_hook(
+                            needs.get_or_create_needs()[need_id]
+                        )
+                main_section += new_needs
 
                 if is_nested:
                     case_count += 1
