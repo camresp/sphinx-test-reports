@@ -1,0 +1,3 @@
+env_file = '.env'
+[tools]
+python = {version='3.10', virtualenv='.venv'} # must be after poetry so the poetry bin is first in PATH

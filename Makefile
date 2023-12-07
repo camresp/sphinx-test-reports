@@ -28,3 +28,14 @@ docs-linkcheck:
 format:
 	black ${SRC_FILES}
 	isort ${SRC_FILES}
+
+.PHONY: build
+build:
+	python -m build .
+
+.PHONY: release
+release:
+	twine upload --repository-url=https://europe-west2-python.pkg.dev/athens-infrastructure/crispi/ \
+		--non-interactive \
+		--verbose \
+		dist/sphinx-test-report*
