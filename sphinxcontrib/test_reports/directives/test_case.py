@@ -135,6 +135,8 @@ class TestCaseDirective(TestCommonDirective):
             )
 
         if case["system-out"] is not None and len(case["system-out"]) > 0:
+            sys_out_text = case["system-out"].replace("[[", "\[\[")
+            case["system-out"] = sys_out_text
             content += """
 
 **System-out**::
@@ -142,7 +144,7 @@ class TestCaseDirective(TestCommonDirective):
    {}
 
 """.format(
-                "\n   ".join([x.lstrip() for x in case["system-out"].split("\n")])
+                "\n   ".join([x.lstrip() for x in sys_out_text.split("\n")])
             )
 
         time = case["time"]

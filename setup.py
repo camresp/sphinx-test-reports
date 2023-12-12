@@ -10,7 +10,7 @@ with open(os.path.join(os.path.dirname(__file__), "README.rst")) as file:
     setup(
         name="sphinx-test-reports-tidalsense",
         # Update also test_reports.py, conf.py and changelog!
-        version="1.0.2",
+        version="1.0.3",
         url="http://github.com/useblocks/sphinx-test-reports",
         download_url="http://pypi.python.org/pypi/sphinx-test-reports",
         license="MIT",
