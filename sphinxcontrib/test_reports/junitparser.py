@@ -59,7 +59,7 @@ class JUnitParser:
             if testcase.find("properties"):
                 props = {}
                 for p in testcase.properties.iter("property"):
-                    with suppress(AttributeError):
+                    with suppress(AttributeError, KeyError):
                         props[p.attrib["name"]] = p.attrib["value"]
                 tc_dict["properties"] = props
 
@@ -119,6 +119,13 @@ class JUnitParser:
                 "testcases": [],
                 "testsuite_nested": [],
             }
+
+            if testsuite.find("properties"):
+                props = {}
+                for p in testsuite.properties.iter("property"):
+                    with suppress(AttributeError, KeyError):
+                        props[p.attrib["name"]] = p.attrib["value"]
+                ts_dict["properties"] = props
 
             # add nested testsuite objects to
             if hasattr(testsuite, "testsuite"):

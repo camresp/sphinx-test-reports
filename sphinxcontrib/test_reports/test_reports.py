@@ -31,7 +31,7 @@ else:
 
 # fmt: on
 
-VERSION = "1.0.2-TidalSense"
+VERSION = "1.0.4-TidalSense"
 
 
 def setup(app):

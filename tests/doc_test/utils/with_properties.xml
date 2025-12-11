@@ -1,6 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <testsuites>
   <testsuite name="camrest" errors="0" failures="0" skipped="5" tests="5" time="115.486" timestamp="2023-11-28T13:15:59.848379" hostname="fv-az403-667">
+    <properties>
+      <property name="version" value="1.2.3" />
+      <property name="commit" value="ce4716e18663e779025735d76a599d36bbeaa6ed" />
+      <property name="ref" value="refs/tags/release/v1.2.3-foo" />
+      <property name="ci"
+        value="https://github.com/org/reponame/actions/runs/19264923962" />
+    </properties>
     <testcase classname="analyser.tests.integration.views.test_decode_cap.TestDecodeCapCallsPusherForLifecycleEvents" name="test_started_when_valid_upload" file="analyser/tests/integration/views/test_decode_cap.py" line="58" time="13.411">
       <properties>
         <property name="description" value="Critical"/>

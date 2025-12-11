@@ -73,6 +73,7 @@ class TestSuiteDirective(TestCommonDirective):
         skipped = suite["skips"]
         errors = suite["errors"]
         failed = suite["failures"]
+        properties = suite.get("properties", {})
 
         main_section = []
         docname = self.state.document.settings.env.docname
@@ -96,6 +97,7 @@ class TestSuiteDirective(TestCommonDirective):
             skipped=skipped,
             failed=failed,
             errors=errors,
+            properties=properties,
         )
 
         # TODO double nested logic

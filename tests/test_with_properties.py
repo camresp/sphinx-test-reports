@@ -20,3 +20,5 @@ def test_doc_build_html_for_pytest_with_properties(test_app):
 
     assert "NTD-SR-032" in html
     assert "tests_requirement_ref" in html
+    assert "tests_requirement_ref" in html
+    assert "'ci': 'https://github.com/org/reponame/actions/runs/19264923962'" in html
